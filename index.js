@@ -1,1 +1,1 @@
-module.exports = require('src/galenor');
+module.exports = require('src/progalenor');
