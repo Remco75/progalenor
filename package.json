@@ -1,0 +1,25 @@
+{
+  "name": "progalenor",
+  "version": "0.0.1",
+  "description": "A protractor helper library for responsive testing ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Remco75/progalenor.git"
+  },
+  "keywords": [
+    "protractor",
+    "galen",
+    "responsive",
+    "testing"
+  ],
+  "author": "Remco Vlierman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Remco75/progalenor/issues"
+  },
+  "homepage": "https://github.com/Remco75/progalenor#readme"
+}
