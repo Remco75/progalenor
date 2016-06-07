@@ -5,30 +5,30 @@
  *  All comparator functions take 2 prostractor elements
  * @constructor
  */
-var RespPO = function () {
 
+var breakpoints = [];
+
+var RespPO = function (bpObj) {
+    if (bpObj) {
+        breakpoints = bpObj;
+    } else {
+        console.log('please supply a object with your breakpoints');
+    }
 };
-var breakpoints = [
-    { name: 'xs', start: 0 },
-    { name: 'sm', start: 768 },
-    { name: 'md', start:1024 },
-    { name: 'lg', start:1440 }
-];
 
 RespPO.prototype = Object.create({}, {
-
     selectMediaQuery: {
         value: function(mq) {
             // set the window width in the center of a media query bandwidth
             var width;
             breakpoints.forEach(function(breakPoint, index) {
-               if( breakPoint.name === mq) {
-                   if(index < breakpoints.length-1) {
+                if( breakPoint.name === mq) {
+                    if(index < breakpoints.length-1) {
                         width =  (breakPoint.start + breakpoints[index+1].start) / 2
-                   } else {
-                       width = breakPoint.start+200;
-                   }
-               }
+                    } else {
+                        width = breakPoint.start+200;
+                    }
+                }
             });
             return browser.manage().window().setSize(width, 480);
         }
@@ -62,7 +62,7 @@ RespPO.prototype = Object.create({}, {
     },
     hasHeight: {
         value: function(element) {
-           return elementHeight(element);
+            return elementHeight(element);
         }
     }
 });
