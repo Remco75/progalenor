@@ -28,7 +28,7 @@ Now we are ready to test!
 
 ### setting the stage
 In order to test in a breakpoint, so can set the browser in the correct width by : ` myResponsiveTestTool.selectMediaQuery('xs')` . Or use any other mediaQuery name 
-in the array we just put in there.
+from the array we just put in there.
 
 ### comparisions
 Most comparator-functions (see API section below) take 2 __protractor elements__  as input. The first is the base-element, the second is the element to compare agains.
