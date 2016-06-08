@@ -31,7 +31,7 @@ In order to test in a breakpoint, so can set the browser in the correct width by
 from the array we just put in there.
 
 ### comparisions
-Most comparator-functions (see API section below) take 2 __protractor elements__  as input. The first is the base-element, the second is the element to compare agains.
+All comparator-functions (see API section below) take 2 __protractor elements__  as input. The first is the base-element, the second is the element to compare agains.
 So if you ` myResponsiveTestTool.isLeftOf(el1,el2) ` , you assume that el1 is left of el2. All comparators return a boolean.
 
 ###  range
