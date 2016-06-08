@@ -33,27 +33,20 @@ RespPO.prototype = Object.create({}, {
             return browser.manage().window().setSize(width, 480);
         }
     },
+    isAbove: {
+        value: require('./comparators/above')
+    },
     isBelow: {
-        value: function(element1, element2) {
-            return element1.getLocation().then(function(loc1) {
-                return element2.getLocation().then(function(loc2) {
-                    return elementHeight(element2).then(function(height) {
-                        return loc1.y < (loc2.y + height);
-                    });
-                });
-            });
-        }
+        value: require('./comparators/below')
     },
     isLeftOf: {
-        value: function(element1, element2) {
-            return element1.getLocation().then(function(loc1) {
-                return elementWidth(element1).then(function(width){
-                    return  element2.getLocation().then(function(loc2) {
-                        return loc1.x + width < loc2.x;
-                    });
-                });
-            });
-        }
+        value: require('./comparators/left')
+    },
+    isRightOf: {
+        value: require('./comparators/right')
+    },
+    isInside: {
+        value: require('./comparators/inside')
     },
     hasWidth: {
         value: function(element) {
@@ -67,16 +60,5 @@ RespPO.prototype = Object.create({}, {
     }
 });
 
-function elementWidth(element) {
-    return element.getSize().then(function(size) {
-        return size.width;
-    });
-}
-
-function elementHeight(element) {
-    return element.getSize().then(function(size) {
-        return size.height;
-    });
-}
 
 module.exports = RespPO;
