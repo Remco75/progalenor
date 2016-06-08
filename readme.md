@@ -12,8 +12,8 @@ I use protractor / cucumber, so I wanted a tool to do css - less ui-testing of r
 
 ## Usage
 ### startup
-Add this module as (dev)dependency and in you test file do somethin like ` PO = require('progalenor'), `.
-If you want to do responsive testing  we need to tell progalenor about our css-breakpoint. we do this by suplying an array, here's my example:
+Add this module as (dev-) dependency and in you test file do somethin like ` PO = require('progalenor') `.
+If you want to do responsive testing we need to tell progalenor about our css-breakpoints. we do this by supplying an array of breakpoints like this example:
 
 ` var breakpoints = [
   { name: 'xs', start: 0 },
@@ -26,12 +26,12 @@ If you want to do responsive testing  we need to tell progalenor about our css-b
 You pass in in the constructor of the module: ` var myResponsiveTestTool = new PO(breakpoints)`; 
 Now we are ready to test!
 
-### Setting the stage
+### setting the stage
 In order to test in a breakpoint, so can set the browser in the correct width by : ` myResponsiveTestTool.selectMediaQuery('xs')` . Or use any other mediaQuery name 
 in the array we just put in there.
 
 ### comparisions
-Most comparator-functions (see API section below) take 2 protractor elements as input. The first is the base-element, the second is the element to compare agains.
+Most comparator-functions (see API section below) take 2 __protractor elements__  as input. The first is the base-element, the second is the element to compare agains.
 So if you ` myResponsiveTestTool.isLeftOf(el1,el2) ` , you assume that el1 is left of el2. All comparators return a boolean.
 
 ###  range
