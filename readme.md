@@ -32,7 +32,7 @@ from the array we just put in there.
 
 ### comparisions
 All comparator-functions (see API section below) take 2 __protractor elements__  as input. The first is the base-element, the second is the element to compare agains.
-So if you ` myResponsiveTestTool.isLeftOf(el1,el2) ` , you assume that el1 is left of el2. All comparators return a boolean.
+So if you ` myResponsiveTestTool.isLeftOf(el1,el2) ` , you assume that el1 is left of el2. Comparators return a boolean.
 
 ###  range
 All comparators take an optional range argument. This is a object in the form of { min: "someNumber", max: "someNumber" }. Values are in px.
