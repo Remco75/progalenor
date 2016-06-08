@@ -1,4 +1,4 @@
-# Progalenor - Responive testing with protractor
+# Progalenor - Responsive UI testing with protractor
 
 Note: You are looking at a early release, the api is still limited, and subject to change.
 
