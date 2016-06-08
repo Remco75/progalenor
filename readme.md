@@ -23,7 +23,7 @@ If you want to do responsive testing we need to tell progalenor about our css-br
 ]
 `
 
-You pass in in the constructor of the module: ` var myResponsiveTestTool = new PO(breakpoints)`; 
+You pass it in the constructor of the module: ` var myResponsiveTestTool = new PO(breakpoints)`; 
 Now we are ready to test!
 
 ### setting the stage

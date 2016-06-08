@@ -14,7 +14,8 @@
     "protractor",
     "galen",
     "responsive",
-    "testing"
+    "testing",
+    "UI"
   ],
   "author": "Remco Vlierman",
   "license": "ISC",
