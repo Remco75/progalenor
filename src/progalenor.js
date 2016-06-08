@@ -34,10 +34,13 @@ RespPO.prototype = Object.create({}, {
         }
     },
     isBelow: {
-        value: function(element1, element2) {
+        value: function(element1, element2, range) {
             return element1.getLocation().then(function(loc1) {
                 return element2.getLocation().then(function(loc2) {
                     return elementHeight(element2).then(function(height) {
+                        if (range) {
+                            return distanceWithinRange(range, loc1.y, (loc2.y+ height));
+                        }
                         return loc1.y < (loc2.y + height);
                     });
                 });
@@ -45,10 +48,13 @@ RespPO.prototype = Object.create({}, {
         }
     },
     isLeftOf: {
-        value: function(element1, element2) {
+        value: function(element1, element2, range) {
             return element1.getLocation().then(function(loc1) {
                 return elementWidth(element1).then(function(width){
                     return  element2.getLocation().then(function(loc2) {
+                        if (range) {
+                            return distanceWithinRange(range, (loc1.x + width), loc2.x);
+                        }
                         return loc1.x + width < loc2.x;
                     });
                 });
@@ -66,6 +72,29 @@ RespPO.prototype = Object.create({}, {
         }
     }
 });
+
+/**
+ * @description Checks whether the distance between 2 values is within the given range
+ * @param range {object} With min and max properties
+ * @param lowerInput {number} The lower value in of the distance
+ * @param higherInput {number} The higher value of the distance
+ * @returns {boolean}
+ */
+function distanceWithinRange(range, lowerInput, higherInput) {
+    if (typeof range !== 'object' || !range.min || !range.max || range.min > range.max) {
+        console.warn('please supply a valid range object');
+        return false
+    }
+    if (lowerInput + range.min > higherInput) {
+        console.warn('lowerBound violation');
+        return false;
+    }
+    if (lowerInput+range.max < higherInput) {
+        console.warn('higherBound violation');
+        return false;
+    }
+    return true;
+}
 
 function elementWidth(element) {
     return element.getSize().then(function(size) {
