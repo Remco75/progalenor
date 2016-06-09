@@ -13,8 +13,8 @@
             console.warn('please supply a valid range object');
             return false
         }
-        if (lowerInput + range.min > higherInput) {
-            console.warn('lowerBound violation');
+        if (lowerInput + range.min > higherInput+1) {
+            console.warn('lowerBound violation', range, lowerInput, higherInput);
             return false;
         }
         if (lowerInput+range.max < higherInput) {
