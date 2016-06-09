@@ -9,7 +9,7 @@
      * @returns {boolean}
      */
     function distanceWithinRange(range, lowerInput, higherInput) {
-        if (typeof range !== 'object' || !range.min || !range.max || range.min > range.max) {
+        if (typeof range !== 'object' || range.min > range.max) {
             console.warn('please supply a valid range object');
             return false
         }
