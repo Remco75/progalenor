@@ -1,6 +1,6 @@
 {
   "name": "progalenor",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A protractor helper library for responsive testing ",
   "main": "index.js",
   "scripts": {
