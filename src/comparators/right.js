@@ -9,7 +9,7 @@
                     if (range) {
                         return utils.distanceWithinRange(range, (loc2.x + width), loc1.x);
                     }
-                    return loc1.x > loc2.x + width;
+                    return loc1.x >= loc2.x + width;
                 });
             });
         });

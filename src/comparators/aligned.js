@@ -1,6 +1,5 @@
 (function() {
     'use strict';
-    var utils = require('../utils/utils');
 
     module.exports = function(elements, orientation, options) {
         var stripErrorElements;
@@ -19,8 +18,7 @@
                 if (!last) {
                     return element.getLocation().then(function(locThis) {
                         return arr[index+1].getLocation().then(function(locNext) {
-                            var topOk = (locThis.y === locNext.y),
-                                bottomOk;
+                            var topOk = (locThis.y === locNext.y), bottomOk;
 
                             if(options.bottom) {
                                 return element.getSize().then(function(sizeThis) {
@@ -40,7 +38,6 @@
                     });
                 }
             });
-
         } else if (orientation === 'vertical') {
             if (options && (options.top || options.bottom)) {
                 console.error('options top or bottom do not make sense when checking vertical alignment');
@@ -50,9 +47,6 @@
             console.error('no orientation provided');
             return;
         }
-
-
-
 
         return stripErrorElements.length === elements.length;
     };
