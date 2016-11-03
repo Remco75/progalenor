@@ -17,10 +17,15 @@
     "testing",
     "UI"
   ],
+  "dependencies": {},
   "author": "Remco Vlierman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Remco75/progalenor/issues"
   },
-  "homepage": "https://github.com/Remco75/progalenor#readme"
+  "homepage": "https://github.com/Remco75/progalenor#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2"
+  }
 }

@@ -48,6 +48,9 @@ RespPO.prototype = Object.create({}, {
     isInside: {
         value: require('./comparators/inside')
     },
+    aligned: {
+        value: require('./comparators/aligned')
+    },
     hasWidth: {
         value: function(element) {
             return elementWidth(element);
